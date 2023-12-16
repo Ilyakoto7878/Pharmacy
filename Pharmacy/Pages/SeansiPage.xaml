@@ -1,0 +1,24 @@
+﻿<Page x:Class="Moon.Pages.SeansiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Moon.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Сеансы">
+
+    <Grid>
+        <Border Background="White"/>
+        <Button x:Name="LogoutButton" Background="CornflowerBlue" VerticalAlignment="Top" HorizontalAlignment="Right" Height="70" Width="150" Foreground="White" Click="MenuPage_Click" Content="Главное меню" FontFamily="Arial" FontSize="14">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Padding="17" TextWrapping="WrapWithOverflow" Text="Детский развивающий центр Почемучка — это то самое место, где юные путешественники могут забыть о нудных уроках и вдоволь насладиться прекрасным летним отдыхом. Здесь имеются душевые, удобная столовая, медицинский пункт, спортивный клуб, а также летняя эстрада и многое другое. Здесь по-настоящему можно стать самим собой и получать удовольствие от отдыха.
+
+В детском развивающем центре Почемучка ребятишки учатся постигать интересную жизнь совместно с опытными воспитателями и их помощниками. Развивающие занятия весьма различны. Классы подбираются по возрасту, а это значит, что ваш ребенок будет всегда находиться вместе со сверстниками, что способствует развитию коммуникативных навыков." Height="275" Margin="39,102,38,73" Width="723"/>
+    </Grid>
+</Page>

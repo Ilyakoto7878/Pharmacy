@@ -1,0 +1,41 @@
+﻿<Page x:Class="Pharmacy.Pages.ClientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pharmacy.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Клиенты">
+    <DockPanel Width="750" Height="434">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="72*"/>
+                <RowDefinition Height="72*"/>
+                <RowDefinition Height="72*"/>
+                <RowDefinition Height="72*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="QRCode" Grid.Row="0" Grid.Column="0" Margin="250,0,215,40" Grid.RowSpan="2"/>
+            <Button x:Name="QRButton" HorizontalAlignment="Center" Width="150" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="4" Click="QRButton_Click" Content="QR код" FontFamily="Arial" FontSize="14" Height="32" Background="LightGreen"/>
+            <Button x:Name="LogoutButton" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Top" Height="50" Width="150" Click="MenuPage_Click" Content="Главное меню" FontFamily="Arial" FontSize="14" Background="LightGreen"/>
+            <Button x:Name="Search" HorizontalAlignment="Center" Width="150" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Click="SearchButton_Click" Content="Найти" FontFamily="Arial" FontSize="14" Height="32" Background="LightGreen"/>
+            <Button x:Name="AddButton" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="150" Click="AddButton_Click" Grid.Column="1" Grid.Row="2" Content="Добавить" FontFamily="Arial" FontSize="14" Height="32" Margin="0,25,0,0" Background="LightGreen"/>
+            <Button x:Name="DeleteButton" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150"  Click="DeleteButton_Click" Grid.Column="1" Grid.Row="3" Content="Удалить" FontFamily="Arial" FontSize="14" Height="32" Margin="0,9,0,0" Background="LightGreen"/>
+            <Button x:Name="DischargeButton" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Click="DischargeButton_Click" Grid.Column="1" Grid.Row="3" Content="Выгрузить" FontFamily="Arial" FontSize="14" Height="32"  Grid.RowSpan="2" Margin="0,62,0,0" Background="LightGreen"/>
+            <TextBox Grid.Row="1" FontSize="14" FontFamily="Arial" x:Name="ClientTextBox" VerticalContentAlignment="Bottom" Margin="0,25,0,72" Grid.RowSpan="2"/>
+            <DataGrid Grid.Column="0" FontFamily="Arial" FontSize="14" VerticalContentAlignment="Bottom" Grid.Row="2" Grid.RowSpan="4" MouseDoubleClick="ClientGrid_MouseDoubleClick" CanUserResizeColumns="False" CanUserResizeRows="False" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" CanUserReorderColumns="False"  x:Name="ClientGrid" Margin="0,10,0,0" SelectionChanged="ClientGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="30" FontSize="14" FontFamily="Arial" x:Name="ID" Header="ID" Binding="{Binding id}" Visibility="Hidden" IsReadOnly="True"/>
+                    <DataGridTextColumn  Width="*" FontSize="14" FontFamily="Arial"  x:Name="FullName" Header="ФИО" Binding="{Binding fio}" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="*" FontSize="14" FontFamily="Arial" x:Name="BirthDate" Header="Дата рождения" Binding="{Binding dataRozd}" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</Page>
